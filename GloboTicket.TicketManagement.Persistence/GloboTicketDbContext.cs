@@ -25,7 +25,7 @@ namespace GloboTicket.TicketManagement.Persistence
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(GloboTicketDbContext).Assembly);
 
-            //seed data, added through migrations
+           //seed data, added through migrations
             var concertGuid = Guid.Parse("{B0788D2F-8003-43C1-92A4-EDC76A7C5DDE}");
             var musicalGuid = Guid.Parse("{6313179F-7837-473A-A4D5-A5571B43E6A6}");
             var playGuid = Guid.Parse("{BF3F3002-7E53-441E-8B76-F6280BE284AA}");
@@ -34,7 +34,8 @@ namespace GloboTicket.TicketManagement.Persistence
             modelBuilder.Entity<Category>().HasData(new Category
             {
                 CategoryId = concertGuid,
-                Name = "Concerts"
+                Name = "Concerts",
+                
             });
             modelBuilder.Entity<Category>().HasData(new Category
             {
@@ -194,9 +195,11 @@ namespace GloboTicket.TicketManagement.Persistence
                 switch (entry.State)
                 {
                     case EntityState.Added:
+                        entry.Entity.CreatedBy = "system";
                         entry.Entity.CreatedDate = DateTime.Now;
                         break;
                     case EntityState.Modified:
+                        entry.Entity.LastModifiedBy = "";
                         entry.Entity.LastModifiedDate = DateTime.Now;
                         break;
                 }
