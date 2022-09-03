@@ -29,12 +29,14 @@ namespace GloboTicket.TicketManagement.Persistence.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CreatedBy")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("CreatedDate")
+                    b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("LastModifiedBy")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("LastModifiedDate")
@@ -52,21 +54,33 @@ namespace GloboTicket.TicketManagement.Persistence.Migrations
                         new
                         {
                             CategoryId = new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dde"),
+                            CreatedBy = "",
+                            CreatedDate = new DateTime(2022, 9, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4322),
+                            LastModifiedBy = "",
                             Name = "Concerts"
                         },
                         new
                         {
                             CategoryId = new Guid("6313179f-7837-473a-a4d5-a5571b43e6a6"),
+                            CreatedBy = "",
+                            CreatedDate = new DateTime(2022, 9, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4434),
+                            LastModifiedBy = "",
                             Name = "Musicals"
                         },
                         new
                         {
                             CategoryId = new Guid("bf3f3002-7e53-441e-8b76-f6280be284aa"),
+                            CreatedBy = "",
+                            CreatedDate = new DateTime(2022, 9, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4448),
+                            LastModifiedBy = "",
                             Name = "Plays"
                         },
                         new
                         {
                             CategoryId = new Guid("fe98f549-e790-4e9f-aa16-18c2292a2ee9"),
+                            CreatedBy = "",
+                            CreatedDate = new DateTime(2022, 9, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4460),
+                            LastModifiedBy = "",
                             Name = "Conferences"
                         });
                 });
@@ -85,9 +99,10 @@ namespace GloboTicket.TicketManagement.Persistence.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CreatedBy")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("CreatedDate")
+                    b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("Date")
@@ -102,6 +117,7 @@ namespace GloboTicket.TicketManagement.Persistence.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastModifiedBy")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("LastModifiedDate")
@@ -127,9 +143,12 @@ namespace GloboTicket.TicketManagement.Persistence.Migrations
                             EventId = new Guid("ee272f8b-6096-4cb6-8625-bb4bb2d89e8b"),
                             Artist = "John Egbert",
                             CategoryId = new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dde"),
-                            Date = new DateTime(2023, 3, 1, 22, 25, 2, 794, DateTimeKind.Local).AddTicks(7736),
+                            CreatedBy = "",
+                            CreatedDate = new DateTime(2022, 9, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4480),
+                            Date = new DateTime(2023, 3, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4475),
                             Description = "Join John for his farwell tour across 15 continents. John really needs no introduction since he has already mesmerized the world with his banjo.",
                             ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/GloboTicket/banjo.jpg",
+                            LastModifiedBy = "",
                             Name = "John Egbert Live",
                             Price = 65
                         },
@@ -138,9 +157,12 @@ namespace GloboTicket.TicketManagement.Persistence.Migrations
                             EventId = new Guid("3448d5a4-0f72-4dd7-bf15-c14a46b26c00"),
                             Artist = "Michael Johnson",
                             CategoryId = new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dde"),
-                            Date = new DateTime(2023, 6, 1, 22, 25, 2, 794, DateTimeKind.Local).AddTicks(7787),
+                            CreatedBy = "",
+                            CreatedDate = new DateTime(2022, 9, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4505),
+                            Date = new DateTime(2023, 6, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4501),
                             Description = "Michael Johnson doesn't need an introduction. His 25 concert across the globe last year were seen by thousands. Can we add you to the list?",
                             ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/GloboTicket/michael.jpg",
+                            LastModifiedBy = "",
                             Name = "The State of Affairs: Michael Live!",
                             Price = 85
                         },
@@ -149,9 +171,12 @@ namespace GloboTicket.TicketManagement.Persistence.Migrations
                             EventId = new Guid("b419a7ca-3321-4f38-be8e-4d7b6a529319"),
                             Artist = "DJ 'The Mike'",
                             CategoryId = new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dde"),
-                            Date = new DateTime(2023, 1, 1, 22, 25, 2, 794, DateTimeKind.Local).AddTicks(7800),
+                            CreatedBy = "",
+                            CreatedDate = new DateTime(2022, 9, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4610),
+                            Date = new DateTime(2023, 1, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4606),
                             Description = "DJs from all over the world will compete in this epic battle for eternal fame.",
                             ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/GloboTicket/dj.jpg",
+                            LastModifiedBy = "",
                             Name = "Clash of the DJs",
                             Price = 85
                         },
@@ -160,9 +185,12 @@ namespace GloboTicket.TicketManagement.Persistence.Migrations
                             EventId = new Guid("62787623-4c52-43fe-b0c9-b7044fb5929b"),
                             Artist = "Manuel Santinonisi",
                             CategoryId = new Guid("b0788d2f-8003-43c1-92a4-edc76a7c5dde"),
-                            Date = new DateTime(2023, 1, 1, 22, 25, 2, 794, DateTimeKind.Local).AddTicks(7810),
+                            CreatedBy = "",
+                            CreatedDate = new DateTime(2022, 9, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4628),
+                            Date = new DateTime(2023, 1, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4625),
                             Description = "Get on the hype of Spanish Guitar concerts with Manuel.",
                             ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/GloboTicket/guitar.jpg",
+                            LastModifiedBy = "",
                             Name = "Spanish guitar hits with Manuel",
                             Price = 25
                         },
@@ -171,9 +199,12 @@ namespace GloboTicket.TicketManagement.Persistence.Migrations
                             EventId = new Guid("1babd057-e980-4cb3-9cd2-7fdd9e525668"),
                             Artist = "Many",
                             CategoryId = new Guid("fe98f549-e790-4e9f-aa16-18c2292a2ee9"),
-                            Date = new DateTime(2023, 7, 1, 22, 25, 2, 794, DateTimeKind.Local).AddTicks(7821),
+                            CreatedBy = "",
+                            CreatedDate = new DateTime(2022, 9, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4646),
+                            Date = new DateTime(2023, 7, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4643),
                             Description = "The best tech conference in the world",
                             ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/GloboTicket/conf.jpg",
+                            LastModifiedBy = "",
                             Name = "Techorama 2021",
                             Price = 400
                         },
@@ -182,9 +213,12 @@ namespace GloboTicket.TicketManagement.Persistence.Migrations
                             EventId = new Guid("adc42c09-08c1-4d2c-9f96-2d15bb1af299"),
                             Artist = "Nick Sailor",
                             CategoryId = new Guid("6313179f-7837-473a-a4d5-a5571b43e6a6"),
-                            Date = new DateTime(2023, 5, 1, 22, 25, 2, 794, DateTimeKind.Local).AddTicks(7833),
+                            CreatedBy = "",
+                            CreatedDate = new DateTime(2022, 9, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4666),
+                            Date = new DateTime(2023, 5, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4663),
                             Description = "The critics are over the moon and so will you after you've watched this sing and dance extravaganza written by Nick Sailor, the man from 'My dad and sister'.",
                             ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/GloboTicket/musical.jpg",
+                            LastModifiedBy = "",
                             Name = "To the Moon and Back",
                             Price = 135
                         });
@@ -197,12 +231,14 @@ namespace GloboTicket.TicketManagement.Persistence.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CreatedBy")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("CreatedDate")
+                    b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("LastModifiedBy")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("LastModifiedDate")
@@ -228,56 +264,77 @@ namespace GloboTicket.TicketManagement.Persistence.Migrations
                         new
                         {
                             Id = new Guid("7e94bc5b-71a5-4c8c-bc3b-71bb7976237e"),
+                            CreatedBy = "",
+                            CreatedDate = new DateTime(2022, 9, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4692),
+                            LastModifiedBy = "",
                             OrderPaid = true,
-                            OrderPlaced = new DateTime(2022, 9, 1, 22, 25, 2, 794, DateTimeKind.Local).AddTicks(7845),
+                            OrderPlaced = new DateTime(2022, 9, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4687),
                             OrderTotal = 400,
                             UserId = new Guid("a441eb40-9636-4ee6-be49-a66c5ec1330b")
                         },
                         new
                         {
                             Id = new Guid("86d3a045-b42d-4854-8150-d6a374948b6e"),
+                            CreatedBy = "",
+                            CreatedDate = new DateTime(2022, 9, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4711),
+                            LastModifiedBy = "",
                             OrderPaid = true,
-                            OrderPlaced = new DateTime(2022, 9, 1, 22, 25, 2, 794, DateTimeKind.Local).AddTicks(7861),
+                            OrderPlaced = new DateTime(2022, 9, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4707),
                             OrderTotal = 135,
                             UserId = new Guid("ac3cfaf5-34fd-4e4d-bc04-ad1083ddc340")
                         },
                         new
                         {
                             Id = new Guid("771cca4b-066c-4ac7-b3df-4d12837fe7e0"),
+                            CreatedBy = "",
+                            CreatedDate = new DateTime(2022, 9, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4725),
+                            LastModifiedBy = "",
                             OrderPaid = true,
-                            OrderPlaced = new DateTime(2022, 9, 1, 22, 25, 2, 794, DateTimeKind.Local).AddTicks(7870),
+                            OrderPlaced = new DateTime(2022, 9, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4722),
                             OrderTotal = 85,
                             UserId = new Guid("d97a15fc-0d32-41c6-9ddf-62f0735c4c1c")
                         },
                         new
                         {
                             Id = new Guid("3dcb3ea0-80b1-4781-b5c0-4d85c41e55a6"),
+                            CreatedBy = "",
+                            CreatedDate = new DateTime(2022, 9, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4739),
+                            LastModifiedBy = "",
                             OrderPaid = true,
-                            OrderPlaced = new DateTime(2022, 9, 1, 22, 25, 2, 794, DateTimeKind.Local).AddTicks(7878),
+                            OrderPlaced = new DateTime(2022, 9, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4737),
                             OrderTotal = 245,
                             UserId = new Guid("4ad901be-f447-46dd-bcf7-dbe401afa203")
                         },
                         new
                         {
                             Id = new Guid("e6a2679c-79a3-4ef1-a478-6f4c91b405b6"),
+                            CreatedBy = "",
+                            CreatedDate = new DateTime(2022, 9, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4753),
+                            LastModifiedBy = "",
                             OrderPaid = true,
-                            OrderPlaced = new DateTime(2022, 9, 1, 22, 25, 2, 794, DateTimeKind.Local).AddTicks(7887),
+                            OrderPlaced = new DateTime(2022, 9, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4750),
                             OrderTotal = 142,
                             UserId = new Guid("7aeb2c01-fe8e-4b84-a5ba-330bdf950f5c")
                         },
                         new
                         {
                             Id = new Guid("f5a6a3a0-4227-4973-abb5-a63fbe725923"),
+                            CreatedBy = "",
+                            CreatedDate = new DateTime(2022, 9, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4770),
+                            LastModifiedBy = "",
                             OrderPaid = true,
-                            OrderPlaced = new DateTime(2022, 9, 1, 22, 25, 2, 794, DateTimeKind.Local).AddTicks(7896),
+                            OrderPlaced = new DateTime(2022, 9, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4766),
                             OrderTotal = 40,
                             UserId = new Guid("f5a6a3a0-4227-4973-abb5-a63fbe725923")
                         },
                         new
                         {
                             Id = new Guid("ba0eb0ef-b69b-46fd-b8e2-41b4178ae7cb"),
+                            CreatedBy = "",
+                            CreatedDate = new DateTime(2022, 9, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4784),
+                            LastModifiedBy = "",
                             OrderPaid = true,
-                            OrderPlaced = new DateTime(2022, 9, 1, 22, 25, 2, 794, DateTimeKind.Local).AddTicks(7905),
+                            OrderPlaced = new DateTime(2022, 9, 2, 22, 58, 22, 216, DateTimeKind.Local).AddTicks(4780),
                             OrderTotal = 116,
                             UserId = new Guid("7aeb2c01-fe8e-4b84-a5ba-330bdf950f5c")
                         });
