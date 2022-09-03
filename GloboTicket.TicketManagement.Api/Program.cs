@@ -1,3 +1,4 @@
+using GloboTicket.TicketManagement.Api.Utility;
 using GloboTicket.TicketManagement.Application;
 using GloboTicket.TicketManagement.Infrastructure;
 using GloboTicket.TicketManagement.Persistence;
@@ -17,6 +18,18 @@ builder.Services.AddCors(options =>
     .AllowAnyHeader().AllowAnyMethod());
 });
 
+builder.Services.AddSwaggerGen(c => 
+{
+    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    {
+        Version = "v1",
+        Title = "GloboTicket Ticket Management API",
+    });
+
+    c.OperationFilter<FileResultContentTypeOperationFilter>();
+
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -28,6 +41,12 @@ if (builder.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseRouting();
 app.UseCors("Open");
+
+app.UseSwagger();
+app.UseSwaggerUI(c => 
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "GloboTicket Ticket Management API");
+});
 
 app.UseEndpoints(endpoints =>
 {
