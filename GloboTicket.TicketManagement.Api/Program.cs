@@ -1,5 +1,7 @@
+using GloboTicket.TicketManagement.Api.Services;
 using GloboTicket.TicketManagement.Api.Utility;
 using GloboTicket.TicketManagement.Application;
+using GloboTicket.TicketManagement.Application.Contracts;
 using GloboTicket.TicketManagement.Infrastructure;
 using GloboTicket.TicketManagement.Persistence;
 
@@ -10,6 +12,8 @@ var configuration = builder.Configuration;
 builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices(configuration);
 builder.Services.AddPersistenceServices(configuration);
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<ILoggedInUserService, LoggedInUserService>();
 
 builder.Services.AddControllers();
 builder.Services.AddCors(options =>
@@ -27,7 +31,6 @@ builder.Services.AddSwaggerGen(c =>
     });
 
     c.OperationFilter<FileResultContentTypeOperationFilter>();
-
 });
 
 var app = builder.Build();
@@ -53,3 +56,5 @@ app.UseEndpoints(endpoints =>
     endpoints.MapControllers();
 });
 app.Run();
+
+public partial class Program { } // to reference it from tests
