@@ -1,3 +1,4 @@
+using GloboTicket.TicketManagement.Api.Middlewares;
 using GloboTicket.TicketManagement.Api.Services;
 using GloboTicket.TicketManagement.Api.Utility;
 using GloboTicket.TicketManagement.Application;
@@ -50,6 +51,8 @@ app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "GloboTicket Ticket Management API");
 });
+
+app.UseCustomExceptionHandler();
 
 app.UseEndpoints(endpoints =>
 {
