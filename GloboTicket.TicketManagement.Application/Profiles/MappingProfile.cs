@@ -7,6 +7,7 @@ using GloboTicket.TicketManagement.Application.Features.Events.Commands.UpdateEv
 using GloboTicket.TicketManagement.Application.Features.Events.Queries.GetEventDetail;
 using GloboTicket.TicketManagement.Application.Features.Events.Queries.GetEventList;
 using GloboTicket.TicketManagement.Application.Features.Events.Queries.GetEventsExport;
+using GloboTicket.TicketManagement.Application.Features.Orders.GetOrdersForMonth;
 using GloboTicket.TicketManagement.Domain.Entities;
 
 namespace GloboTicket.TicketManagement.Application.Profiles
@@ -28,7 +29,7 @@ namespace GloboTicket.TicketManagement.Application.Profiles
             CreateMap<Category, CreateCategoryCommand>();
             CreateMap<Category, CreateCategoryDto>();
 
-            //CreateMap<Order, OrdersForMonthDto>();
+            CreateMap<Order, OrdersForMonthDto>();
         }
     }
 }
