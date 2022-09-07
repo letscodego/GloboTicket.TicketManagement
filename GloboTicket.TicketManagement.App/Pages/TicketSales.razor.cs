@@ -2,10 +2,6 @@
 using GloboTicket.TicketManagement.App.Contracts;
 using GloboTicket.TicketManagement.App.ViewModels;
 using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace GloboTicket.TicketManagement.App.Pages
 {
@@ -22,7 +18,7 @@ namespace GloboTicket.TicketManagement.App.Pages
         public string SelectedYear { get; set; }
 
         public List<string> MonthList { get; set; } = new List<string>() { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" };
-        public List<string> YearList { get; set; } = new List<string>() { "2020", "2021", "2022" };
+        public List<string> YearList { get; set; } = new List<string>() { "2020", "2021", "2022", "2023" };
 
         private int? pageNumber = 1;
 
